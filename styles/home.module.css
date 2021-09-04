@@ -1,0 +1,48 @@
+.bigger {
+    font-weight: normal;
+    font-size: 32px;
+}
+
+.welcome {
+    margin: 70px 175px;
+    font-size: 24px;
+    font-weight: 300;
+}
+
+.content h1 {
+    font-size: 32px;
+    margin-bottom: 50px;
+}
+
+.content h1, .latest {
+    margin-left: 250px;
+}
+
+.latest p {
+    font-weight: 300;
+    font-size: 17px;
+}
+
+.latest > li {
+    margin-bottom: 60px;
+}
+
+.content h2 {
+    display: inline;
+    font-size: 26px;
+}
+
+.categories {
+    display: inline-flex;
+    width: 60vw;
+    margin-left: 20px;
+    font-size: 12px;
+    vertical-align: middle;
+}
+
+.categories * {
+    background: #1F1F1F;
+    padding: 2px 3px;
+    border-radius: 3px;
+    margin-right: 10px;
+}

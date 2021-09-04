@@ -1,0 +1,36 @@
+.content h1 {
+    margin-top: 70px;
+    font-size: 34px;
+}
+
+.content h2 {
+    font-size: 28px;
+}
+
+.content h3 {
+    font-size: 26px;
+}
+
+.content ul {
+    font-size: 22px;
+}
+
+.content li {
+    margin: 40px auto;
+}
+
+.indent1 {
+    margin-left: 200px;
+}
+
+.indent2 {
+    margin-left: 250px;
+}
+
+.indent3 {
+    margin-left: 300px;
+}
+
+.indent4 {
+    margin-left: 350px;
+}

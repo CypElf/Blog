@@ -1,0 +1,29 @@
+.footer {
+    margin-top: 60px;
+    background: #252829;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px 10px 20px;
+}
+
+.footer small {
+    font-size: 22px;
+    font-weight: 300;
+}
+
+.github {
+    margin-right: 15px;
+}
+
+.footer p {
+    font-weight: 300;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+.footer a {
+    text-decoration: underline;
+}
