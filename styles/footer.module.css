@@ -27,3 +27,22 @@
 .footer a {
     text-decoration: underline;
 }
+
+@media (max-width: 500px) {
+    .footer {
+        justify-content: space-around;
+    }
+
+    .footer small {
+        font-size: 20px;
+    }
+
+    .footer p {
+        flex-direction: column;
+        font-size: 16px;
+    }
+
+    .top {
+        display: none;
+    }
+}

@@ -10,6 +10,6 @@ export default function Footer() {
             </div>
             This blog is {'\u200B'}<a href="https://github.com/CypElf/Blog">open source</a>
         </p>
-        <a href="#top"><Image className={css.top} src="/top.png" alt="return to top arrow" width={40} height={40}/></a>
+        <a className={css.top} href="#top"><Image src="/top.png" alt="return to top arrow" width={40} height={40}/></a>
     </footer>)
 }

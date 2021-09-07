@@ -19,3 +19,25 @@
     font-size: 28px;
     font-weight: 300;
 }
+
+@media (max-width: 1000px) {
+    .header {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .logo {
+        display: inline;
+        margin: auto;
+    }
+
+    .title {
+        display: inline;
+        margin: auto;
+        font-size: 32px;
+    }
+
+    .right {
+        font-size: 24px;
+    }
+}

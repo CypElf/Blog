@@ -34,3 +34,25 @@
 .indent4 {
     margin-left: 350px;
 }
+
+@media (max-width: 900px) {
+    .indent1 {
+        margin-left: 20px;
+    }
+
+    .indent2 {
+        margin-left: 25px;
+    }
+    
+    .indent3 {
+        margin-left: 30px;
+    }
+    
+    .indent4 {
+        margin-left: 35px;
+    }
+
+    .content li {
+        font-size: 18px;
+    }
+}

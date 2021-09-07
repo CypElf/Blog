@@ -25,6 +25,7 @@
 
 .latest > li {
     margin-bottom: 60px;
+    margin-right: 250px;
 }
 
 .content h2 {
@@ -34,7 +35,6 @@
 
 .categories {
     display: inline-flex;
-    width: 60vw;
     margin-left: 20px;
     font-size: 12px;
     vertical-align: middle;
@@ -45,4 +45,26 @@
     padding: 2px 3px;
     border-radius: 3px;
     margin-right: 10px;
+}
+
+@media (max-width: 1000px) {
+    .welcome {
+        margin: 40px 25px;
+        font-size: 20px;
+    }
+    
+    .latest, .content h1, .latest > li {
+        margin: auto 20px;
+    }
+    
+    .content h1 {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 450px) {
+    .categories {
+        margin-left: 0;
+    }
 }

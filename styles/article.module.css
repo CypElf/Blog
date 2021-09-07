@@ -1,9 +1,8 @@
 .content {
-    width: 60%;
+    width: 50%;
     margin: auto;
     margin-top: 75px;
     font-size: 20px;
-    text-align: justify;
 }
 
 .content h1 {
@@ -20,6 +19,7 @@
 }
 
 .content p, .content li {
+    text-align: justify;
     font-weight: 300;
 }
 
@@ -105,4 +105,37 @@
     padding: 2px 3px;
     border-radius: 3px;
     margin-right: 10px;
+}
+
+@media (max-width: 1300px) {
+    .content {
+        width: 65%;
+    }
+}
+
+@media (max-width: 1000px) {
+    .content {
+        width: 75%;
+    }
+}
+
+@media (max-width: 500px) {
+    .content {
+        font-size: 19px;
+        width: 85%;
+        margin-top: 20px;
+    }
+
+    .content h1 {
+        font-size: 28px;
+        margin: 15px auto;
+    }
+    
+    .content h2 {
+        font-size: 24px;
+    }
+    
+    .content h3 {
+        font-size: 22px;
+    }
 }
