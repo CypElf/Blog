@@ -60,6 +60,11 @@
     margin-right: 10px;
 }
 
+.thumbnail {
+    margin-top: 15px;
+    text-align: center;
+}
+
 @media (max-width: 1000px) {
     .welcome {
         margin: 40px 25px;

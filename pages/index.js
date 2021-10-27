@@ -1,4 +1,5 @@
 import Head from "next/head"
+import Image from "next/image"
 import Footer from "../components/footer"
 import Header from "../components/header"
 import css from "../styles/home.module.css"
@@ -14,6 +15,8 @@ export default function Home({ articles }) {
         return 0
     })
     articles = articles.slice(0, 10)
+
+    console.log(articles.map(article => ({ title: article.title, thumbnail: article.thumbnail })))
 
     return (<>
         <Head>
@@ -34,6 +37,13 @@ export default function Home({ articles }) {
                     return (
                         <li key={article.title}>
                             <a href={`/articles/${article.filename}`}><h2>{article.title}</h2></a>
+                            <div className={css.thumbnail}>
+                            {
+                                article.thumbnail &&
+                                <Image src={`/articles/${article.title.toLowerCase()}/${article.thumbnail}`} alt="article thumbnail" width={250} height={250}/>
+                            }
+                            </div>
+                            
                             <p>{article.description}</p>
                             <ul className={css.categories}>
                                 {article.categories.map(category => {

@@ -3,6 +3,7 @@ title: Simple
 date: 21/06/2021
 description: "This challenge was a very nice introduction to ROP. We had to exploit a buffer overflow, and the NX bit and ASLR were both enabled, but not the PIE."
 author: Elf
+thumbnail: shell.png
 ---
 
 # Simple
