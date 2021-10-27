@@ -3,6 +3,7 @@ title: Asmcoool
 date: 22/06/2021
 keywords:
     - Reverse
+thumbnail: /articles/asmcoool/thumbnail.png
 description: In this challenge, we are given a simple assembly program and we need to understand it to find the flag.
 author: Elf
 ---

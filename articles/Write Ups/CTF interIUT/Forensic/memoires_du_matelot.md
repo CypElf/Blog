@@ -3,6 +3,7 @@ title: Mémoires du matelot 1
 date: 22/06/2021
 keywords:
     - Forensic
+thumbnail: /articles/memoires_du_matelot/thumbnail.png
 description: For this challenge, we had a big memory dump to work with, and were asked to retrieve the IP and port of someone that was connected to the machine using a VPN.
 author: Elf
 ---

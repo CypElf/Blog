@@ -3,6 +3,7 @@ title: Des bretons malchanceux
 date: 22/06/2021
 keywords:
     - crypto
+thumbnail: /articles/des_bretons_malchanceux/thumbnail.png
 description: In this challenge, we had to recover the flag from a strange sequence of numbers encoded with a weird custom base 13 and a few permutations.
 author: Elf
 ---
