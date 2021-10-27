@@ -30,8 +30,6 @@ export default function Home({ articles }) {
                 <span className={css.description}>This is a blog about IT security in general. Here, you will be able to find write ups, general articles about security and more.</span>
             </p>
 
-            <h1>Latest published articles</h1>
-
             <ul className={css.latest}>
                 {articles.map(article => {
                     return (
