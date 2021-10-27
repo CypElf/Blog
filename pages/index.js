@@ -16,8 +16,6 @@ export default function Home({ articles }) {
     })
     articles = articles.slice(0, 10)
 
-    console.log(articles.map(article => ({ title: article.title, thumbnail: article.thumbnail })))
-
     return (<>
         <Head>
             <title>Home - Elf's blog</title>
@@ -38,13 +36,13 @@ export default function Home({ articles }) {
                             <div className={css.thumbnail}>
                             {
                                 article.thumbnail &&
-                                <Image src={`/articles/${article.title.toLowerCase()}/${article.thumbnail}`} alt="article thumbnail" width={250} height={250}/>
+                                <Image src={`/articles/${article.title.toLowerCase()}/${article.thumbnail}`} alt="article thumbnail" width={350} height={250}/>
                             }
                             </div>
                             
                             <p>{article.description}</p>
                             <ul className={css.categories}>
-                                {article.categories.map(category => {
+                                {article.keywords.map(category => {
                                     return (
                                         <li key={category}>
                                             {category}
