@@ -45,8 +45,7 @@
     height: 530px;
 }
 
-.content h2 {
-    /* display: inline; */
+.content h1 {
     margin: 0;
     text-align: center;
     font-size: 26px;
@@ -72,24 +71,33 @@
 }
 
 @media (max-width: 1000px) {
+    .bigger {
+        font-size: 24px;
+    }
+
     .welcome {
-        margin: 40px 25px;
-        font-size: 20px;
+        margin: 40px 20px;
+        font-size: 18px;
+    }
+
+    .content {
+        width: 95%;
     }
     
-    .content h1, .latest > li {
+    .latest > li {
         margin: 30px 20px;
-    }
-    
-    .content h1 {
-        font-size: 28px;
-        margin-bottom: 30px;
     }
 
     .latest {
         display: flex;
         flex-direction: column;
         align-items: center;
+        width: 100%;
+    }
+
+    .latest p {
+        padding-left: 15px;
+        padding-right: 15px;
     }
 }
 

@@ -32,7 +32,7 @@ export default function Home({ articles }) {
                 {articles.map(article => {
                     return (
                         <li key={article.title}>
-                            <a href={`/articles/${article.filename}`}><h2>{article.title}</h2></a>
+                            <a href={`/articles/${article.filename}`}><h1>{article.title}</h1></a>
                             <div className={css.thumbnail}>
                             {
                                 article.thumbnail &&
