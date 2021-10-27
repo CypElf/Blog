@@ -1,16 +1,24 @@
+.content {
+    width: 80%;
+    margin: auto;
+}
+
 .bigger {
     font-weight: normal;
-    font-size: 32px;
+    font-size: 26px;
 }
 
 .welcome {
-    margin: 70px 175px;
-    font-size: 24px;
-    font-weight: 300;
+    margin: 70px 70px;
+    font-size: 20px;
+}
+
+.description {
+    color: #BABABA;
 }
 
 .content h1 {
-    font-size: 32px;
+    font-size: 24px;
     margin-bottom: 50px;
 }
 
@@ -20,29 +28,34 @@
 
 .latest p {
     font-weight: 300;
-    font-size: 17px;
+    font-size: 16px;
+    color: #BABABA;
 }
 
 .latest > li {
-    margin-bottom: 60px;
-    margin-right: 250px;
+    display: block;
+    background: #2C2C2E;
+    box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.25);
+    border-radius: 22px;
+    padding: 20px 50px;
 }
 
 .content h2 {
-    display: inline;
+    /* display: inline; */
+    margin: 0;
+    text-align: center;
     font-size: 26px;
 }
 
 .categories {
-    display: inline-flex;
-    margin-left: 20px;
+    display: flex;
+    justify-content: flex-end;
     font-size: 12px;
-    vertical-align: middle;
 }
 
 .categories * {
     background: #1F1F1F;
-    padding: 2px 3px;
+    padding: 3px 4px;
     border-radius: 3px;
     margin-right: 10px;
 }
@@ -54,7 +67,7 @@
     }
     
     .latest, .content h1, .latest > li {
-        margin: auto 20px;
+        margin: 30px 20px;
     }
     
     .content h1 {

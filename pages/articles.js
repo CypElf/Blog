@@ -71,7 +71,7 @@ export default function Articles({ articles }) {
 
     return (<>
         <Head>
-            <title>Articles - Elf&apos;s blog</title>
+            <title>Articles - Elf's blog</title>
             <meta name="description" content="All the articles, sorted by category and date."/>
         </Head>
         <Header/>

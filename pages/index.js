@@ -17,14 +17,14 @@ export default function Home({ articles }) {
 
     return (<>
         <Head>
-            <title>Home - Elf&apos;s blog</title>
+            <title>Home - Elf's blog</title>
             <meta name="description" content="Elf's IT security blog"/>
         </Head>
         <Header/>
         <div className={css.content}>
             <p className={css.welcome}>
                 <span className={css.bigger}>Welcome!</span><br/>
-                <span>This is a blog about IT security in general. Here, you will be able to find write ups, general articles about security and more.</span>
+                <span className={css.description}>This is a blog about IT security in general. Here, you will be able to find write ups, general articles about security and more.</span>
             </p>
 
             <h1>Latest published articles</h1>
@@ -33,7 +33,8 @@ export default function Home({ articles }) {
                 {articles.map(article => {
                     return (
                         <li key={article.title}>
-                            <a href={`/articles/${article.filename}`}><h2 className="red">{article.title}</h2></a>
+                            <a href={`/articles/${article.filename}`}><h2>{article.title}</h2></a>
+                            <p>{article.description}</p>
                             <ul className={css.categories}>
                                 {article.categories.map(category => {
                                     return (
@@ -43,7 +44,6 @@ export default function Home({ articles }) {
                                     )
                                 })}
                             </ul>
-                            <p>{article.description}</p>
                         </li>
                     )
                 })}

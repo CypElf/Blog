@@ -6,11 +6,11 @@ export default function Header() {
     return (<header id="top">
         <nav className={css.header}>
             <div className={css.logo}>
-                <Image src="/logo.png" alt="cypelf logo" width={45} height={45}/>
+                <Image src="/logo.gif" alt="elf logo" width={50} height={50}/>
             </div>
             <div className={css.title}>
                 <Link href="/">
-                    Elf&apos;s infosec blog
+                    Elf's infosec blog
                 </Link>
             </div>
             <div className={css.right}>
