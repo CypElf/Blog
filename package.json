@@ -27,6 +27,7 @@
         "react-helmet": "^6.1.0"
     },
     "devDependencies": {
+        "@types/react-helmet": "^6.1.4",
         "autoprefixer": "^10.4.0",
         "gatsby-plugin-postcss": "^5.4.0",
         "postcss": "^8.4.5",

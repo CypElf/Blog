@@ -3,6 +3,8 @@ import { graphql } from "gatsby"
 import Footer from "../components/footer"
 import Header from "../components/header"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { Helmet } from "react-helmet"
+import icon from "../resources/images/logo_static_rounded.png" // typescript complains but there's literally NO OTHER WAY and it just works
 
 export default function Home({ data }) {
     let articles = data.allMarkdownRemark.nodes
@@ -17,6 +19,11 @@ export default function Home({ data }) {
     articles = articles.slice(0, 10)
 
     return (<>
+        <Helmet>
+            <title>Elf's blog - latest posts</title>
+            <meta name="description" content="CTF, articles and write up"/>
+            <link rel="icon" href={icon}/>
+        </Helmet>
         <Header/>
             <p className="text-4xl w-4/5 mx-auto lg:mt-10 mt-5 mb-3 pl-7">Latest posts</p>
             <ul className="flex flex-col items-center lg:items-stretch m-auto xl:w-4/5 lg:grid lg:grid-cols-2">
