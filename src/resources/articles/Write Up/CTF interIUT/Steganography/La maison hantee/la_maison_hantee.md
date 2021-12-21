@@ -2,8 +2,7 @@
 slug: /articles/la-maison-hantee
 title: La maison hantee
 date: 22/06/2021
-keywords:
-    - Steganography
+category: Steganography
 thumbnail: thumbnail.png
 description: In this steganography challenge, we had to recover the flag from a mp3 file.
 author: Elf

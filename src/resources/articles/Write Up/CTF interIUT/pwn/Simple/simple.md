@@ -2,8 +2,7 @@
 slug: /articles/simple
 title: Simple
 date: 21/06/2021
-keywords:
-    - pwn
+category: pwn
 thumbnail: thumbnail.png
 description: A buffer overflow exploitation, with NX and ASLR, but no PIE. A good introduction to ROP.
 author: Elf

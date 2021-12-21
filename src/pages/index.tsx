@@ -4,10 +4,10 @@ import Footer from "../components/footer"
 import Header from "../components/header"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { Helmet } from "react-helmet"
-import icon from "../resources/images/logo_static_rounded.png" // typescript complains but there's literally NO OTHER WAY and it just works
+import { Article } from "../utilities/article"
 
 export default function Home({ data }) {
-    let articles = data.allMarkdownRemark.nodes
+    let articles: Article[] = data.allMarkdownRemark.nodes
     articles.sort((a, b) => {
         // -1 to the month because it is zero indexed
         const dateA = a.frontmatter.date.split("/").reverse().join("/")
@@ -22,7 +22,6 @@ export default function Home({ data }) {
         <Helmet>
             <title>Elf's blog - latest posts</title>
             <meta name="description" content="CTF, articles and write up"/>
-            <link rel="icon" href={icon}/>
         </Helmet>
         <Header/>
             <p className="text-4xl w-4/5 mx-auto lg:mt-10 mt-5 mb-3 pl-7">Latest posts</p>
@@ -40,15 +39,10 @@ export default function Home({ data }) {
                                 </div>
                                 
                                 <p className="font-segoe text-lg text-center text-gray-4 mt-5 sm:px-10">{article.frontmatter.description}</p>
-                                <ul className="flex justify-end text-sm mt-5">
-                                    {article.frontmatter.keywords.map(category => {
-                                        return (
-                                            <li className="text-white-1 bg-gray-1 p-1 rounded-sm" key={category}>
-                                                {category}
-                                            </li>
-                                        )
-                                    })}
-                                </ul>
+
+                                <div className="text-sm text-white-1 bg-gray-1 p-1 rounded-sm ml-auto mt-5 w-fit">
+                                    {article.frontmatter.category.toLowerCase()}
+                                </div>
                             </a>
                         </li>
                     )
@@ -59,24 +53,24 @@ export default function Home({ data }) {
 }
 
 export const pageQuery = graphql`
-query Articles {
-    allMarkdownRemark {
-        nodes {
-            frontmatter {
-                author
-                description
-                date
-                keywords
-                slug
-                title
-                thumbnail {
-                    childImageSharp {
-                        gatsbyImageData(width: 600)
+    query {
+        allMarkdownRemark {
+            nodes {
+                frontmatter {
+                    author
+                    description
+                    date
+                    category
+                    slug
+                    title
+                    thumbnail {
+                        childImageSharp {
+                            gatsbyImageData(placeholder: BLURRED)
+                        }
                     }
                 }
+                html
             }
-            html
         }
     }
-}
 `

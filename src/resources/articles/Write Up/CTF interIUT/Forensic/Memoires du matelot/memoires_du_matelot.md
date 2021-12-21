@@ -2,8 +2,7 @@
 slug: /articles/memoires-du-matelot
 title: Memoires du matelot 1
 date: 22/06/2021
-keywords:
-    - Forensic
+category: Forensic
 thumbnail: thumbnail.png
 description: A memory dump has been done while someone was connected to a VPN. Our goal is to retrieve the IP and port of this connection.
 author: Elf

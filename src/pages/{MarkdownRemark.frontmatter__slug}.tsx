@@ -5,7 +5,7 @@ import hljs from "highlight.js"
 import "highlight.js/styles/stackoverflow-dark.css"
 import Footer from "../components/footer"
 import Header from "../components/header"
-import icon from "../resources/images/logo_static_rounded.png"
+import { Article } from "../utilities/article"
 
 export default function Home({ data }) {
     useEffect(() => {
@@ -15,12 +15,12 @@ export default function Home({ data }) {
         }
     })
 
-    console.log(data)
+    const article: Article = data.markdownRemark
+
     return (<>
         <Helmet>
-            <title>Elf's blog - {data.markdownRemark.frontmatter.title}</title>
-            <meta name="description" content={data.markdownRemark.frontmatter.description}/>
-            <link rel="icon" href={icon}/>
+            <title>Elf's blog - {article.frontmatter.title}</title>
+            <meta name="description" content={article.frontmatter.description}/>
         </Helmet>
         <Header/>
         <div className="article m-auto mt-7 lg:mt-16 font-segoe text-base xl:text-lg w-5/6 lg:w-3/4 xl:w-1/2" dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}></div>
@@ -29,22 +29,22 @@ export default function Home({ data }) {
 }
 
 export const pageQuery = graphql`
-query Article($id: String!) {
-    markdownRemark(id: { eq: $id }) {
-        frontmatter {
-            author
-            description
-            date
-            keywords
-            slug
-            title
-            thumbnail {
-                childImageSharp {
-                    gatsbyImageData(placeholder: BLURRED)
+    query ($id: String!) {
+        markdownRemark(id: { eq: $id }) {
+            frontmatter {
+                author
+                description
+                date
+                category
+                slug
+                title
+                thumbnail {
+                    childImageSharp {
+                        gatsbyImageData(placeholder: BLURRED)
+                    }
                 }
             }
+            html
         }
-        html
     }
-}
 `

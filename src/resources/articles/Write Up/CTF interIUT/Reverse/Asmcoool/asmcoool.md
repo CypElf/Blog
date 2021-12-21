@@ -2,8 +2,7 @@
 slug: /articles/asmcoool
 title: Asmcoool
 date: 22/06/2021
-keywords:
-    - Reverse
+category: Reverse
 thumbnail: thumbnail.png
 description: A simple hand written assembly program to reverse and understand.
 author: Elf
