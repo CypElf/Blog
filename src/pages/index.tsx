@@ -20,31 +20,33 @@ export default function Home({ data }) {
 
     return (<>
         <Header/>
-            <p className="">Recent posts</p>
+            <p className="text-4xl w-4/5 mx-auto mt-10 pl-7">Latest posts</p>
 
-            <ul className="m-auto w-4/5 grid grid-cols-2">
+            <ul className="flex flex-col items-center lg:items-stretch m-auto xl:w-4/5 lg:grid lg:grid-cols-2">
                 {articles.map(article => {
                     console.log(article.frontmatter.thumbnail)
                     return (
-                        <li className="flex flex-col justify-between bg-gray-3 shadow-md rounded-lg mx-7 my-12" key={article.frontmatter.title}>
-                            <a href={article.frontmatter.slug}><h1>{article.frontmatter.title}</h1></a>
-                            <div className="mt-4 text-center">
-                            {
-                                article.frontmatter.thumbnail &&
-                                <GatsbyImage image={getImage(article.frontmatter.thumbnail)} alt="article thumbnail"/>
-                            }
-                            </div>
-                            
-                            <p className="font-light text-base text-gray-4 px-10">{article.description}</p>
-                            <ul className="flex justify-end text-sm mt-5">
-                                {article.frontmatter.keywords.map(category => {
-                                    return (
-                                        <li className="bg-gray-1 p-1 rounded-sm mr-2" key={category}>
-                                            {category}
-                                        </li>
-                                    )
-                                })}
-                            </ul>
+                        <li className="flex" key={article.frontmatter.title}>
+                            <a className="mx-7 my-12 p-4 max-w-xl flex-1 flex flex-col justify-between bg-gray-3 shadow-xl rounded-lg hover:text-green-1" href={article.frontmatter.slug}>
+                                <h1 className="text-2xl text-center mt-3">{article.frontmatter.title}</h1>
+                                <div className="mt-4 text-center">
+                                {
+                                    article.frontmatter.thumbnail &&
+                                    <GatsbyImage image={getImage(article.frontmatter.thumbnail)} alt="article thumbnail"/>
+                                }
+                                </div>
+                                
+                                <p className="font-segoe text-gray-4 mt-5 sm:px-10">{article.frontmatter.description}</p>
+                                <ul className="flex justify-end text-sm mt-5">
+                                    {article.frontmatter.keywords.map(category => {
+                                        return (
+                                            <li className="text-white-1 bg-gray-1 p-1 rounded-sm" key={category}>
+                                                {category}
+                                            </li>
+                                        )
+                                    })}
+                                </ul>
+                            </a>
                         </li>
                     )
                 })}
@@ -66,7 +68,7 @@ query Articles {
                 title
                 thumbnail {
                     childImageSharp {
-                        gatsbyImageData(width: 350)
+                        gatsbyImageData(width: 600)
                     }
                 }
             }
