@@ -4,8 +4,8 @@ title: Simple
 date: 21/06/2021
 keywords:
     - pwn
-thumbnail: shell.png
-description: This challenge was a very nice introduction to ROP. We had to exploit a buffer overflow, and the NX bit and ASLR were both enabled, but not the PIE.
+thumbnail: thumbnail.png
+description: A buffer overflow exploitation, with NX and ASLR, but no PIE. A good introduction to ROP.
 author: Elf
 ---
 
@@ -20,40 +20,40 @@ In order to analyze it more easily, we download the program with a `scp chall@si
 
 Let's do a quick `file` on the executable :
 
-![](/articles/simple/file.png)
+![](file.png)
 
 It's a 64 bits ELF executable. Fortunately for us, it is not stripped. Now let's try to run it:
 
-![](/articles/simple/exec.png)
+![](exec.png)
 
 The program takes an input and stops just after this input is entered, without doing anything.
 If we put a very large amount of characters (5000 here, a large number chosen arbitrarily), we can see that a buffer overflow happens:
 
-![](/articles/simple/segfault.png)
+![](segfault.png)
 
 After a few tests, we can see that the input starts to alter the `rip` save on the stack and thus makes the program crash when exactly **56** characters are entered.
 Let's disassemble and decompile the program to see how it works. As I only have the freeware version of IDA, I can't use its decompiler, so I'll fall back on Ghidra for the decompilation, but stay with IDA for the disassembly.
 The main function is very simple: it gives the program the rights of its owner (it's a [SUID](https://en.wikipedia.org/wiki/Setuid) binary), then it performs a user input with the `gets` function in a 40 characters buffer. This is the origin of our buffer overflow.
 
-![](/articles/simple/main.png)
+![](main.png)
 
 If you look at the other functions, you will find two that catch your attention: `heyo` and `shell`.
 Here is the decompiled `heyo` function:
 
-![](/articles/simple/heyo.png)
+![](heyo.png)
 
 The decompiled version of this function doesn't really help us, so let's look at its assembler code instead:
 
-![](/articles/simple/heyo_asm.png)
+![](heyo_asm.png)
 
 All it really does is `pop rdi`. Let's just keep this function in the corner of our minds for now and let's take a look at the `shell` function.
 Here is the decompiled `shell` function:
 
-![](/articles/simple/shell.png)
+![](shell.png)
 
 This function takes a byte as an argument, which it will xor 9 times to a `command` variable. This variable is not declared here, so we can assume this is a global variable. We can look at what value this variable is initialized with in the `.data` section:
 
-![](/articles/simple/.data.png)
+![](data_section.png)
 
 This 9 variable contains these 9 characters: `+fmj+fewl`.
 We can't simply redirect the execution of the program to this function, because it takes a parameter that it will xored with this before executing it as a command.
@@ -62,11 +62,11 @@ We must therefore first find out what to send as a parameter to this function in
 We can thus find the key used by xoring one or several known characters and their xored version, stored in the executable.
 Here I use [CyberChef](https://gchq.github.io/CyberChef/), a very powerful online tool that allows you to manipulate data in many ways.
 
-![](/articles/simple/xor1.png)
+![](xor1.png)
 
 Thus, we have recovered the key, which is 4. We can verify it:
 
-![](/articles/simple/xor2.png)
+![](xor2.png)
 
 We obtain the string `/bin/bash` which interests us. Now we just have to find out how to pass this key as an argument to the shell function.
 If we were dealing with an x86 executable, it would have been enough to put the key on the stack to pass it as an argument: the arguments are placed on the stack. That would have been fine.
@@ -97,6 +97,6 @@ with open("exploit", "wb") as file:
 
 All that's left to do is run the program with out exploit, without forgetting the classic `cat` to prevent the shell from closing as soon as it opens:
 
-![](/articles/simple/flag.png)
+![](flag.png)
 
 We get the flag: `CTFIUT{StUP1de_s7up1DE_5tUpiDe!!}`
