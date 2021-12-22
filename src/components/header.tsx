@@ -23,8 +23,8 @@ export default function Header() {
                 <div className={`${!menuBurgerDeployed ? "hidden" : ""} w-44 h-full flex flex-col items-center px-4 p-3 bg-gray-3 shadow-2xl z-10 fixed md:static top-0 right-0 md:flex md:flex-row md:items-center md:w-auto md:bg-gray-2 md:shadow-none`} id="menu">
                     <div className="md:hidden self-end text-3xl mb-5" onClick={() => setMenuBurgerDeployed(false)}>&times;</div>
                     <ul className="md:flex md:justify-between mb-3 md:m-0">
-                        <li className="hover:text-green-1 md:block text-2xl font-light mr-6 mb-5 md:mb-0"><Link to="/articles">Articles</Link></li>
-                        <li className="hover:text-green-1 md:block text-2xl font-light mr-3 md:m-0"><Link to="/whoami">Whoami</Link></li>
+                        <li className="hover:text-green-1 md:block text-2xl font-light mr-6 md:mr-12 mb-5 md:mb-0"><Link to="/articles">Articles</Link></li>
+                        <li className="hover:text-green-1 md:block text-2xl font-light mr-3 md:m-0 md:mr-3"><Link to="/whoami">Whoami</Link></li>
                     </ul>
                 </div>
             </nav>
