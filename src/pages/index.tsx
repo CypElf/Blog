@@ -21,7 +21,7 @@ export default function Home({ data }) {
     return (<>
         <Helmet>
             <title>Elf's blog - latest posts</title>
-            <meta name="description" content="CTF, articles and write up"/>
+            <meta name="description" content="CTF, articles and write ups"/>
         </Helmet>
         <Header/>
             <p className="text-4xl w-4/5 mx-auto lg:mt-10 mt-5 mb-3 pl-7">Latest posts</p>
