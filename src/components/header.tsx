@@ -24,7 +24,6 @@ export default function Header() {
                     <div className="md:hidden self-end text-3xl mb-5" onClick={() => setMenuBurgerDeployed(false)}>&times;</div>
                     <ul className="md:flex md:justify-between mb-3 md:m-0">
                         <li className="hover:text-green-1 md:block text-2xl font-light mr-6 md:mr-12 mb-5 md:mb-0"><Link to="/articles">Articles</Link></li>
-                        <li className="hover:text-green-1 md:block text-2xl font-light mr-3 md:m-0 md:mr-3"><Link to="/whoami">Whoami</Link></li>
                     </ul>
                 </div>
             </nav>
