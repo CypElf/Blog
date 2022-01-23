@@ -24,12 +24,12 @@ export default function Articles({ data }) {
 
                         return (<li key={ctf}>
                             <ul className="font-segoe">
-                                <h2 className="w-10/12 md:w-1/2 text-2xl m-auto mt-14 pl-24">{ctf}</h2>
+                                <h2 className="w-10/12 md:w-1/2 text-2xl m-auto mt-14 pl-24"><a id={ctf.replaceAll(" ", "-")} href={`#${ctf.replaceAll(" ", "-")}`}>{ctf}</a></h2>
                                 {categories.map(category => {
                                     return (<li key={category} className="w-10/12 md:mt-14 md:w-1/3 md:m-auto">
                                         <h3 className="text-xl md:text-2xl my-6 md:my-11">{category}</h3>
                                         <ul className="list-disc list-inside">
-                                            {articles.filter(article => article.frontmatter.category === category).map(article => {
+                                            {articles.filter(article => article.frontmatter.category === category && article.frontmatter.ctf === ctf).map(article => {
                                                 return (
                                                     <li className="md:text-lg my-3" key={article.frontmatter.slug}>{article.frontmatter.date} {">"} <a className="text-green-1 hover:underline" href={article.frontmatter.slug}>{article.frontmatter.title}</a></li>
                                                 )
