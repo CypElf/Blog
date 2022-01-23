@@ -38,6 +38,7 @@ export const pageQuery = graphql`
                 category
                 slug
                 title
+                ctf
                 thumbnail {
                     childImageSharp {
                         gatsbyImageData(placeholder: BLURRED)

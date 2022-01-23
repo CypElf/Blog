@@ -6,6 +6,7 @@ category: Steganography
 thumbnail: thumbnail.png
 description: In this steganography challenge, we had to recover the flag from a mp3 file.
 author: Elf
+ctf: CTF inter IUT 2021
 ---
 
 # La maison hantée

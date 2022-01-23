@@ -6,6 +6,7 @@ category: pwn
 thumbnail: thumbnail.png
 description: A buffer overflow exploitation, with NX and ASLR, but no PIE. A good introduction to ROP.
 author: Elf
+ctf: CTF inter IUT 2021
 ---
 
 # Simple

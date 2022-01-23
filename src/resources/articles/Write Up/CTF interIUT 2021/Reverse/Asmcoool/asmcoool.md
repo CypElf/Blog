@@ -6,6 +6,7 @@ category: Reverse
 thumbnail: thumbnail.png
 description: A simple hand written assembly program to reverse and understand.
 author: Elf
+ctf: CTF inter IUT 2021
 ---
 
 # Asmcoool
