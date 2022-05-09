@@ -40,7 +40,7 @@ x_bits = [Bool(f"x{i}") for i in range(0, 63)]
 t_bits = [Bool(f"t{i}") for i in range(0, 63)] # let's call the intermediary gates state t (t for tmp)
 
 for i, bit in enumerate(expected_y_bits):
-    previous_i = (i + 62) % 63 # this is the index of the previous element in a modulo 62 cycle
+    previous_i = (i + 62) % 63 # this is the index of the previous element in a modulo 63 cycle
 
     s.add(Xor(t_bits[previous_i], x_bits[i]) == bit)
     s.add(And(x_bits[previous_i], Not(x_bits[i])) == t_bits[i])
