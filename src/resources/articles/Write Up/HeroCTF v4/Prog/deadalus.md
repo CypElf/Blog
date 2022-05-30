@@ -95,7 +95,6 @@ And voilà, with this script you can determine the number of loops in the labyri
 
 ## My script
 
-
 ```py
 from pwn import *
 
