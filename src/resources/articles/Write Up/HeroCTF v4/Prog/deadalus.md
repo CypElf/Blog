@@ -4,7 +4,7 @@ title: Deadalus
 date: 30/05/2022
 category: Prog
 thumbnail: thumbnail.png
-description: Find the number of loops in each labyrinth with a recursive search
+description: Find the number of loops in each maze with a recursive search
 author: Elf
 ctf: HeroCTF v4
 ---
@@ -61,13 +61,13 @@ With that said, let's get into it.
 
 ## Description of the program logic step by step
 
-First things first, we receive the labyrinth from the server and convert it to a representation we can work with: a Python matrix, that I call board throughout the program.
+First things first, we receive the maze from the server and convert it to a representation we can work with: a Python matrix, that I call board throughout the program.
 
 Then, we go through each of the gateways contained in the board, and call our function `get_loops` each time. We'll dive deeper in this function in just a moment; it's supposed to give us a list of sets, where each set represents a loop from the gateway at these coordinates and contains tuples of the coordinates of the points in the loop.
 
 For each loop in the list, we check if we didn't already find this same loop before from another gateway, and if it's a new one, we keep track of it and add it to our global list of loops.
 
-When this ends, we have the number of loops in the labyrinth, and we can send that to the server to get to the next level.
+When this ends, we have the number of loops in the maze, and we can send that to the server to get to the next level.
 
 Now, let's dive into the core of the script: the `get_loops` function. This function takes the board, the coordinates of a gateway, and should find every possible loops from this gateway.<br>
 This function just calls the recursive function `get_loops_rec` with some more initial parameters:
@@ -91,7 +91,7 @@ Once we know what direction or directions we'll have to explore, for each of the
 
 Recall that this recursive call will give us all the loops starting from the cell we currently are at. If the call returns something, there's a loop in that direction starting from here, so we append the coordinates of the current cell to each of these loops, and when this is done, we return this list that will be completed by the previous recursive call up to the beginning when we started the recursive calls on the loop cell.
 
-And voilà, with this script you can determine the number of loops in the labyrinths and get the flag!
+And voilà, with this script you can determine the number of loops in the mazes and get the flag!
 
 ## My script
 
