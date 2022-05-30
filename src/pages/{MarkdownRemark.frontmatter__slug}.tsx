@@ -2,6 +2,7 @@ import React, { useEffect } from "react"
 import { graphql } from "gatsby"
 import { Helmet } from "react-helmet"
 import hljs from "highlight.js"
+import hljsDefineSolidity from "highlightjs-solidity"
 import "highlight.js/styles/stackoverflow-dark.css"
 import Footer from "../components/footer"
 import Header from "../components/header"
@@ -10,10 +11,12 @@ import { Article } from "../utilities/article"
 export default function Home({ data }) {
     useEffect(() => {
         // this is a very dirty way of adding syntax highlighting, but there's no other way to use highlight.js in gatsby, since there's no plugin for that (gatsby's official syntax highlighting plugin uses prism.js, which has only a few themes that are - imo - VERY ugly)
+        hljsDefineSolidity(hljs)
+        hljs.initHighlightingOnLoad()
         for (const codeBlock of document.querySelectorAll("pre > code")) {
             hljs.highlightBlock(codeBlock as HTMLElement)
         }
-    })
+    }, [])
 
     const article: Article = data.markdownRemark
 
