@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata&display=swap");
+
 body {
     font-family: Bahnschrift, Segoe UI, Roboto, Arial, sans-serif;
     background: #14161A;
@@ -52,7 +54,7 @@ a {
     font-size: 85%;
     background: #08090B;
     border-radius: 3px;
-    font-family: Consolas, Roboto, Arial, sans-serif;
+    font-family: Inconsolata, "Segoe UI", Roboto, Arial, sans-serif;
     white-space: pre-wrap;
     overflow-wrap: break-word;
     padding: 0.2em;
