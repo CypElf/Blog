@@ -18,13 +18,13 @@ export default function Articles({ data }) {
             <div className="flex-1">
                 <Header/>
                 <h1 className="text-2xl text-center mt-5 md:text-3xl md:pl-20 md:m-auto md:mt-10">All the articles</h1>
-                <ul>
+                <ul className="mx-10">
                     {ctfs.map(ctf => {
                         const categories = [...new Set(articles.filter(article => article.frontmatter.ctf === ctf).map(article => article.frontmatter.category))]
 
                         return (<li key={ctf}>
                             <ul className="font-segoe">
-                                <h2 className="w-10/12 md:w-1/2 text-2xl m-auto mt-14 pl-24"><a id={ctf.replaceAll(" ", "-")} href={`#${ctf.replaceAll(" ", "-")}`}>{ctf}</a></h2>
+                                <h2 className="w-10/12 md:w-1/2 text-2xl m-auto mt-14 lg:pl-24"><a id={ctf.replaceAll(" ", "-")} href={`#${ctf.replaceAll(" ", "-")}`}>{ctf}</a></h2>
                                 {categories.map(category => {
                                     return (<li key={category} className="w-10/12 md:mt-14 md:w-1/3 md:m-auto">
                                         <h3 className="text-xl md:text-2xl my-6 md:my-11">{category}</h3>
