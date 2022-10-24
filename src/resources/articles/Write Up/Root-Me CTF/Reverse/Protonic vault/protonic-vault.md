@@ -2,7 +2,7 @@
 slug: /articles/protonic-vault
 title: Protonic vault
 date: 24/10/2022
-category: reverse
+category: Reverse
 thumbnail: thumbnail.png
 description: Bytenode encoded Electron application bypass
 author: Elf

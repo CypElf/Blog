@@ -2,7 +2,7 @@
 slug: /articles/gate-keeper
 title: Gate keeper
 date: 24/10/2022
-category: reverse
+category: Reverse
 thumbnail: thumbnail.png
 description: eBPF rootkit analysis
 author: Elf
@@ -15,7 +15,8 @@ ctf: Root-Me CTF
 
 This is a write up for a challenge I created for the Root-Me CTF we organized to celebrate the 10k members on the Discord server. \
 Please keep in mind I wasn't a participant but the creator of the challenge, hence the level of details and explainations I am able to provide. \
-That was an amazing experience to help organizing this CTF, and I hope people learned a few things and enjoyed my challenges!
+That was an amazing experience to help organizing this CTF, and I hope people learned a few things and enjoyed my challenges! \
+Also, if you're French and want to know a bit about what eBPF is and how it works before reading this write up to better understand everything, I've also made a presentation about eBPF at this Root-Me event. You can find [the replay on Root-Me's Youtube channel](https://youtu.be/FTdrqxf4loE), if you're interested in watching it.
 
 ## Description
 
@@ -28,8 +29,6 @@ Let's see what kind of file we got to get started.
 ![](file.png)
 
 What we have here is an [eBPF](https://en.wikipedia.org/wiki/Berkeley_Packet_Filter) program.
-<!-- TODO : uncomment when the talk is released on the YouTube channel -->
-<!-- If you're French and want to know a bit about what it is and how it works, I've made a presentation about eBPF for the Root-Me association you can find on their YouTube channel. -->
 
 Because of the description of the challenge and the fact that this is an eBPF program, it seems that this program may be an eBPF rootkit preventing from reading the flag. Let's dive into it.
 
@@ -53,7 +52,7 @@ You can consult the structure being passed as an argument to the tracepoint by r
 
 ![](enter_format.png)
 
-We know from the [eBPF calling convention](https://docs.kernel.org/bpf/instruction-set.html) that r1 ro r5 are used for the arguments when a function is called. It means the address of this structure will be stored in r1. Let's keep that in mind.
+We know from the [eBPF calling convention](https://docs.kernel.org/bpf/instruction-set.html) that r1 to r5 are used for the arguments when a function is called. It means the address of this structure will be stored in r1. Let's keep that in mind.
 
 The code begins by calling the `bpf_get_current_pid_tgid` helper, then it shifts the result to the right by 32 bits, which is the tgid part of the value.
 
