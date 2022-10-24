@@ -145,6 +145,6 @@ And that's it! The security rules didn't prevent us from accessing all the secre
 
 ![](secrets.png)
 
-You can see the flag being stored as the secret of a user named `admin` whose UID is `1_4m_th3_4dm1n_u1d`, and you also won the right to read all the notes of the participant as a bonus, there are a few funny ones in it. 8)
+You can see the flag being stored as the secret of a user named `admin` whose UID is `1_4m_th3_4dm1n_u1d`, and you also won the right to read all the notes of the participants as a bonus, there are a few funny ones in it. 8)
 
 Flag: `RM{s3cur1ty_rul3s_m1sc0nf1gur4t10n}`
