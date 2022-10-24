@@ -1,7 +1,7 @@
 ---
 slug: /articles/gate-keeper
 title: Gate keeper
-date: 24/10/2022
+date: 23/10/2022
 category: Reverse
 thumbnail: thumbnail.png
 description: eBPF rootkit analysis

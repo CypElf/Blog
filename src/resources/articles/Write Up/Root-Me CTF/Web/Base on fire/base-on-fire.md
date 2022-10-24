@@ -1,7 +1,7 @@
 ---
 slug: /articles/base-on-fire
 title: Base on fire
-date: 25/10/2022
+date: 24/10/2022
 category: Web
 thumbnail: thumbnail.png
 description: Firestore security rules misconfiguration
