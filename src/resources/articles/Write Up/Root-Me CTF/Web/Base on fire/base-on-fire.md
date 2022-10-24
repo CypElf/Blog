@@ -141,7 +141,7 @@ async function solve() {
 solve()
 ```
 
-And that's it! The security rules didn't prevent us fro accessing all the secrets in the collection!
+And that's it! The security rules didn't prevent us from accessing all the secrets in the collection!
 
 ![](secrets.png)
 
