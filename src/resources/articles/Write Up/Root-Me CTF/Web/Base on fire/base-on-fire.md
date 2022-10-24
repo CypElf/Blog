@@ -94,7 +94,7 @@ async function solve() {
 solve()
 ```
 
-Unfortunately, we're rejecting because we don't have the permission.
+Unfortunately, we're rejected because we don't have the permission.
 
 ![](insufficient_perms.png)
 
