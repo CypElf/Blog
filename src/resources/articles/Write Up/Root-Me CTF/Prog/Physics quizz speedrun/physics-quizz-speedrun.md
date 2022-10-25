@@ -29,7 +29,7 @@ We start with the link `ws://ctf10k.root-me.org:8000`. This is a websocket! We c
 
 ![](insomnia.png)
 
-The website returned a binary string. Let's decode it.
+The websocket returned a binary string. Let's decode it.
 
 ![](cyberchef.png)
 
@@ -37,18 +37,18 @@ It's asking about the CAS number of Bromine. Let's answer something random to se
 
 ![](answer.png)
 
-The server answered with a binary string once more.
+The websocket answered with a binary string once more.
 
 ![](cyberchef2.png)
 
-The server says it doesn't speak our language. It means we have to speak in its language: binary. \
-If we retry once more, we can see that the server has 3 types of questions:
+The websocket says it doesn't speak our language. It means we have to speak in its language: binary. \
+If we retry once more, we can see that the websocket has 3 types of questions:
 
 - the CAS number of an atom
 - the number of electrons of an atom
 - the atomic weight of the atom
 
-In addition to that, the server has 2 different ways of asking us:
+In addition to that, the websocket has 2 different ways of asking us:
 
 - Can you tell me what is the `<question>` of `<element>` please?`
 - Yo, please tell me what is the value of the `<question>` for the `<element>`
