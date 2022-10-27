@@ -4,7 +4,7 @@ title: DFS
 date: 27/10/2022
 category: Prog
 thumbnail: thumbnail.png
-description: Deep first search algorithm application on a directed graph
+description: Depth first search algorithm application on a directed graph
 author: Elf
 ctf: Root-Me CTF
 ---
@@ -28,7 +28,7 @@ We start the challenge with a host and port, as usual. Let's connect to it to se
 ![](chall.png)
 
 It's giving us the [adjacency list](https://en.wikipedia.org/wiki/Adjacency_list) of a graph and asking us if we can access some node Y from node X (though it's not in a usable form right now and we'll have to parse the information we want in that). \
-This is a very common problem in graph theory to search for the accessibility of a node from another, and thus there are a few algorithms to do it, such as [Deep First Search](https://en.wikipedia.org/wiki/Depth-first_search) (DFS). \
+This is a very common problem in graph theory to search for the accessibility of a node from another, and thus there are a few algorithms to do it, such as [Depth First Search](https://en.wikipedia.org/wiki/Depth-first_search) (DFS). \
 This algorithm isn't very complicated. It will basically start at our start node, mark it as visited, visit every neightbor of it, and check if that neightbor it's our destination node. If it is, that's a success, otherwise, we'll mark this node as visited and use recursion to visit all of the neightbors of this node that are not marked as visited. This process only stops if we reach our destination node or if we visited all the accessible nodes from our start node and marked them all as visited without finding it.
 
 Here's my script:
