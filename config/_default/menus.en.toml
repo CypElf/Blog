@@ -28,3 +28,8 @@ weight = 10
 name = "This blog is open source"
 url = "https://github.com/CypElf/Blog"
 weight = 10
+
+[[footer]]
+name = "Also accessible via Tor"
+url = "http://avataaafjba3dsgpdydlqfd2mrlhdlgw3b6u6yq2qfclbo6kxadoibyd.onion/"
+weight = 11
