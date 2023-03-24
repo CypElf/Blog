@@ -89,11 +89,11 @@ It looks like a heap challenge. We have a menu and we can select an option among
 There are two vulnerabilities. \
 The first one is in the 3rd option, which frees the slot but does not set it to NULL. This allows the 2nd option to be used on it even if it's freed to edit the content, allowing for a user after free (UAF).
 
-![](images/uaf.png)
+![](uaf.png)
 
 The second one is in the 4th option, where a format string vulnerability is present. However, a check is done and reject any input containing the letter `n`, which makes this format string useful only for leaking stuff but unusable for writing purposes, because we can't use `%n`.
 
-![](images/fmtstr.png)
+![](fmtstr.png)
 
 Because we can only allocate 7 different buffers at a time, and their size is limited to a range between 1 and 1032, we will only be able to use the tcachebins. \
 We have the possibility to leak addresses from the stack thanks to the format string, that we can use to defeat ASLR. \

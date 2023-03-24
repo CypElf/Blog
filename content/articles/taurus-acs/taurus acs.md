@@ -23,22 +23,22 @@ My desktop PC is running Windows, so let's run the installer and see what it ins
 
 If we search "Taurus", we can see a program got installed.
 
-![](images/app_list.png)
+![](app_list.png)
 
 If we run the app, we can see it's just a usual login screen that requires a username and a password. The background is a nice animated space background.
 
-![](images/app.png)
+![](app.png)
 
 If you right click in the application, you'll see some options that refers to the web (in French on my computer, sorry).
 
-![](images/right_click.png)
+![](right_click.png)
 
 If we look closely at the UI, it indeed looks like something done with web technologies. Let's keep that in mind.
 
 Let's find the executable. We can right click on the program in the start menu and click on "open file in folder". We see that it's actually a shortcut located in `C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Taurus ACS`. If we check this time the properties of the shortcut, we can see the actual executable is located in `C:\Program Files\Taurus ACS`. \
 In this folder, are only the executable itself and an uninstaller.
 
-![](images/install_folder.png)
+![](install_folder.png)
 
 A `file` does not give much information.
 
@@ -63,20 +63,20 @@ For this reason, let's start by reversing the executable as usual and see if the
 
 Because the amount of functions is very big, as usual, we'll use the strings we know to find the interesting place. And that's a success: we find the failure string we saw earlier, and it has a x-ref to some code!
 
-![](images/check.png)
+![](check.png)
 
 **Note** : even if placing the check in the JavaScript code would have been more interesting from a technical perspective because you have to do research on this technology, in order to keep the challenge more simple and accessible, I chose to place the check in the back end, because the challenge was initially meant to be easier than the others. Some teams still tried and succeeded in extracting the front end assets from the binary. Even if it wasn't of any use in this challenge, congrats to them!
 
 So the check is probably done in this function, in the back end. Let's decompile it and look at what it does.
 
-![](images/scary_rust.png)
+![](scary_rust.png)
 
 At first, it looks really, really bad. That's mainly because IDA does not properly handle Rust code and therefore wrongly identify a lot of variable types. \
 But don't listen to all these people that say they see Rust reverse in their nightmares! There's a lot of things that don't matter in this decompiled content, and if you take your time to go through this and fix the wrong types, you'll see it's not that hard.
 
 Let's split the decompiled code in two parts. Here is the first one after some time renaming and fixing stuff:
 
-![](images/first_part.png)
+![](first_part.png)
 
 We immediately see the string `0p34rt0r` being copied into a buffer. We can guess the typo here: it should probably be `0p3r4t0r` instead. The line just after is what fixes it with a rotate left of 8 bits in the 2 bytes at offset 3, which literally just swap the two bytes `4` and `r`.
 
@@ -85,7 +85,7 @@ The first condition is therefore just a sanity check and doesn't matter for us, 
 
 The `compare_strings` function can be figured out very easily, as its code is straightforward.
 
-![](images/compare.png)
+![](compare.png)
 
 An interesting thing about Rust is that strings never end with a null byte, and are always used in pair with their length. That's the reason IDA doesn't recognize the end of strings in general when disassembling or decompiling Rust code, and why it shows us beyond the string end, when another string is placed after it.
 
@@ -95,14 +95,14 @@ Later, another comparison is made between our input and the one that is supposed
 
 Moving on to the second part.
 
-![](images/second_part.png)
+![](second_part.png)
 
 A weird thing is the fact that his `result` variable used sooner is reused for something completely different. It's really annoying because the type seems to be 64 bits in the first part, but here the variable is used as an array of bytes. \
 For simplicity, I changed the type of the variable between the screenshot of the first part and this second part.
 
 Some hardcoded bytes are placed in this buffer first. IDA detected this as a xmmword because of its size of 16 bytes, but it's probably just an optimization. I fixed the type by setting it to an array of 128 bytes to fit the decompiled code that places that in the first 16 bytes.
 
-![](images/hardcoded.png)
+![](hardcoded.png)
 
 The decompiled code then places immediate values in the rest of the variable. These are probably just the next bytes condensed once again in big numbers for optimization. It stops at the 31st byte (index 30).
 
@@ -135,7 +135,7 @@ g4l4xy_pr0t3ct10n_15_my_m15510n
 
 Nice! Let's try this as the password in the app.
 
-![](images/success.png)
+![](success.png)
 
 We passed the checks! \
 Flag: `HACKDAY{0p3r4t0r:g4l4xy_pr0t3ct10n_15_my_m15510n}`

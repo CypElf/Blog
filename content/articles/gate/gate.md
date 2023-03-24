@@ -126,7 +126,7 @@ This means that even if the require fails in the IdentityManager, the transactio
 
 **Note** : If you paste the contract code into Remix, you'll see it even warns you about the fact that the return value isn't used! Thanks, Remix!
 
-![](images/privileges.png)
+![](privileges.png)
 
 ## Finding the password
 
@@ -184,6 +184,6 @@ If we convert `0x7365316b7320746867316e20336874206e3120743575647234747320796e316
 Now that we have registered our name, understand that we can ignore the permission check and recovered the password, we can call the `letMeIn` function with the argument `sh1ny st4rdu5t 1n th3 n1ght sk1es` to unlock the gate! \
 Only thing left to do is to click the check button and get the flag.
 
-![](images/flag.png)
+![](flag.png)
 
 Flag: `HACKDAY{w3lc0m3_t0_0ur_h34dqu4rt3rs_m4t3}`

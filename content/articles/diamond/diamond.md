@@ -82,7 +82,7 @@ The usage of `tx.origin` for authorization is a [big mistake](https://swcregistr
 
 If you did pay attention to the faucet page, something very important was written...
 
-![](images/faucet.png)
+![](faucet.png)
 
 > Useful note: this faucet is also the account used to deploy the contracts.
 
@@ -138,10 +138,10 @@ We just need to create it with the address of the Diamond contract we want to at
 
 Once done, the Diamond contract doesn't have anything left in its balance, as expected.
 
-![](images/balance.png)
+![](balance.png)
 
 We've reached our goal! We can now get the flag by clicking the check button on the challenge page.
 
-![](images/flag.png)
+![](flag.png)
 
 Flag: `HACKDAY{4ll_d14m0nds_succ3ssfully_st0l3n}`

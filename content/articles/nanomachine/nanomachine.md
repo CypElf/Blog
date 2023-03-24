@@ -40,7 +40,7 @@ Let's open the file in IDA and start static analysis.
 
 The first thing we notice is that there are only a few functions. If we look at the strings, they indicate that the binary is packed with upx. For an embedded program, it makes sense to use packers like upx to save a maximum of space.
 
-![](images/upx.png)
+![](upx.png)
 
 We can unpack it using `upx -d`.
 
@@ -73,7 +73,7 @@ For simplicity and readability purposes, I'll only show how it looks like when t
 
 The following pseudo code is what I have after reversing the function, renaming things and fixing the wrongly detected variable types.
 
-![](images/decomp.png)
+![](decomp.png)
 
 As you can see, it's pretty easy to figure out what's going at that point. The program seems to be written in C, so no black magic from C++, Go or Rust is making the code look terrible. It's clean.
 
@@ -92,7 +92,7 @@ And the result is placed in another buffer, that I called the processed serial.
 The last step is another loop, where the processed serial is simply compared to an array of integers hardcoded in the binary, in the `.data` section. If the comparison is successful, the serial is accepted. \
 Let's look at the hardcoded array. If we tell IDA that this is an array of length 16 and we display it as decimal, we get the following nice array of values.
 
-![](images/hardcoded.png)
+![](hardcoded.png)
 
 **Note** : you can also see a nice string under that array. It actually is an easter egg, not used at any point in the program. If you don't have the reference, the challenge is entirely a reference to a well known [meme from Metal Gear Rising: Revengeance](https://youtu.be/RhMsboqMMzs). This string is actually the lyrics of [Armstrong's theme](https://youtu.be/75WTRdwHL2k). The challenge name had nothing to do with nanomites, this time...
 

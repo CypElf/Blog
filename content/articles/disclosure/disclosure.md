@@ -107,7 +107,7 @@ There are also online websites for this, e.g. [ABDK Toolkit](https://toolkit.abd
 Now that we know the addresses of these contracts, let's go ahead and access the NTFs stored on each of them! The FilesManager contract implements OpenZeppelin's `ERC721URIStorage` interface, so we can use the `tokenURI` function to get the URI associated to a token. \
 Let's start with the first contract. If we call `tokenURI` on the token ID 1 to get the URI associated to the first NTF this contract owns, we get the URI `TODO`. The URI starts with `ipfs://`: this NFT is stored on IPFS!
 
-![](images/tokenURI.png)
+![](tokenURI.png)
 
 [IPFS](https://ipfs.tech/) is a peer to peer hypermedia and file sharing protocol similar to BitTorrent, that aims to be an decentralized alternative to today's web and HTTP. Content on IPFS is not accessed using its location as is the case with HTTP, but by a content identifier (CID) that uniquely identifies the content.
 
@@ -115,22 +115,22 @@ We can access this IPFS link to see the file it points to on the IPFS network. F
 
 **Note** : if you use the [Brave](https://brave.com/) browser, IPFS is supported out of the box and you can just paste the IPFS link in the URL top bar to access the file. Brave will ask you if you want to use a public gateway or directly start your own IPFS node in the browser so you can access the file using the IPFS protocol without using a third party.
 
-![](images/metadata.png)
+![](metadata.png)
 
 NFTs with Ethereum often use this pattern to store data about the token: the NFT in the Ethereum chain points to a JSON metadata file on IPFS, used to store data such as a name, a description, and more... \
 In addition, we can see an image field, with once again another IPFS link. This is typically used to store illustrations associated to a NFT. \
 If we access it, we get a very nice fan art from Xenoblade Chronicles 3.
 
-![](images/noah.png)
+![](noah.png)
 
 If we repeat the process and go through all the NTFs one by one, we see that they all follow the same schema. Each of them is linked to a JSON metadata file on IPFS, which in turn is linked to an illustration, also on IPFS.
 
 After inspecting all the NFTs of the contracts, in the 3rd one, we finally find a NTF whose metadata indicate the name `Flag`.
 
-![](images/flag_metadata.png)
+![](flag_metadata.png)
 
 And that's it, the flag is written on the image.
 
-![](images/flag.png)
+![](flag.png)
 
 Flag: `HACKDAY{k3q1ng_supr3m4cy}`
