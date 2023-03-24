@@ -10,7 +10,7 @@ ctf:
 draft: false
 ---
 
-**Note**: this is the write up of a challenge I created, as a challenge creator for the HackDay 2023 qualifications.
+**Note**: this is the write up of a challenge I created, as a challenge creator for the HackDay 2023 qualifications. The challenge source code can be found in the [CTF repository](https://github.com/ChallengeHackDay/2023-qualif).
 
 > You continue your stealthy exploration of the outpost, avoiding the guards, and arrive at a server room. \
 > There's bound to be some interesting data somewhere... Seize the personal data of the leaders !

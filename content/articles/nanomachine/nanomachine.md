@@ -10,7 +10,7 @@ ctf:
 draft: false
 ---
 
-**Note**: this is the write up of a challenge I created, as a challenge creator for the HackDay 2023 qualifications.
+**Note**: this is the write up of a challenge I created, as a challenge creator for the HackDay 2023 qualifications. The challenge source code can be found in the [CTF repository](https://github.com/ChallengeHackDay/2023-qualif).
 
 > The largest hospital in the Virgo sector has finally received its new stock of nanomachines needed to perform the most critical patient operations. \
 > Unfortunately, the activation codes we received for the firmware of these nanomachines do not work, and the supplier does not answer our calls! \

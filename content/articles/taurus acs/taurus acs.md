@@ -10,7 +10,7 @@ ctf:
 draft: false
 ---
 
-**Note**: this is the write up of a challenge I created, as a challenge creator for the HackDay 2023 qualifications.
+**Note**: this is the write up of a challenge I created, as a challenge creator for the HackDay 2023 qualifications. The challenge source code can be found in the [CTF repository](https://github.com/ChallengeHackDay/2023-qualif).
 
 > An emergency has been declared in the Taurus area! A hostage situation is taking place, tourists have been trapped in a building and negotiations are at a standstill. \
 > On site, our scouting teams have found a door to the basement of the building that lead straight to the hostages! But unfortunately, this door is protected by a program that only allows the passage of maintenance operators... \

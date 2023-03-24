@@ -10,7 +10,7 @@ ctf:
 draft: false
 ---
 
-**Note**: this is the write up of a challenge I created, as a challenge creator for the HackDay 2023 qualifications.
+**Note**: this is the write up of a challenge I created, as a challenge creator for the HackDay 2023 qualifications. The challenge source code can be found in the [CTF repository](https://github.com/ChallengeHackDay/2023-qualif).
 
 > As you arrive at the outpost, you find that the main entrance at the front is completely guarded, but as you walk around the area, you find a small hidden service door that leads straight into the outpost.
 > 

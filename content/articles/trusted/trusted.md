@@ -10,7 +10,7 @@ ctf:
 draft: false
 ---
 
-**Note**: this is the write up of a challenge I created, as a challenge creator for the HackDay 2023 qualifications.
+**Note**: this is the write up of a challenge I created, as a challenge creator for the HackDay 2023 qualifications. The challenge source code can be found in the [CTF repository](https://github.com/ChallengeHackDay/2023-qualif).
 
 > The situation is bad. The magistrate database from the Sagittarius sector has been leaked! \
 > The incident response team continues to see unknown connections in the logs from outside the sector, even though the passwords have all been changed. \

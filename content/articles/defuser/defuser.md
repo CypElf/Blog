@@ -10,7 +10,7 @@ ctf:
 draft: false
 ---
 
-**Note**: this is the write up of a challenge I created, as a challenge creator for the HackDay 2023 qualifications.
+**Note**: this is the write up of a challenge I created, as a challenge creator for the HackDay 2023 qualifications. The challenge source code can be found in the [CTF repository](https://github.com/ChallengeHackDay/2023-qualif).
 
 > An active bomb has been detected at a military base in the Scorpio sector! Our best troops have been mobilized, but the bomb is far too technologically advanced to be defused in the traditional way... \
 > On its small on-board screen, it displays only `sie2op7ohko.hackday.fr:1337`.
