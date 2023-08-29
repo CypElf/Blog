@@ -7,14 +7,12 @@ title = "Elf's blog"
 # copyright = "Copy, _right?_ :thinking_face:"
 
 
-[languages]
-  [languages.en]
-    [languages.en.params]
-      isoCode = "en"
-      description = "Blog about cybersecurity stuff"
-      displayName = "EN"
-      dateFormat = "2 January 2006"
-      rtl = false
+[params]
+  isoCode = "en"
+  description = "Blog about cybersecurity stuff"
+  displayName = "EN"
+  dateFormat = "2 January 2006"
+  rtl = false
 
 [author]
   name = "Elf"
