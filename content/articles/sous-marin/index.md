@@ -196,7 +196,7 @@ More details can be found on <https://france-cybersecurity-challenge.fr/pow>.
 Please provide an ASCII printable string S such that SHA256(NvG1EIUBL9tr2aDz || S) starts with 22 bits equal to 0 (the string concatenation is denoted ||):
 ```
 
-Before seeing anything with the chllenge, it's protected by a PoW mecanism. I guess it is used here because loading a bootloader and a kernel, probably in an emulator such as QEMU just like we did locally, takes a lot of resources, so the PoW is a way to prevent anyone from being able to overload the server by starting a lot of connections very fast. \
+Before seeing anything with the challenge, it's protected by a PoW mecanism. I guess it is used here because loading a bootloader and a kernel, probably in an emulator such as QEMU just like we did locally, takes a lot of resources, so the PoW is a way to prevent anyone from being able to overload the server by starting a lot of connections very fast. \
 This is not relevant for the purpose of the challenge. A Python solve script for it is provided in the linked page with all the details about this protection, so we don't have to care much about it. I just moved the code that computes and sends the PoW in another file, so I could just import it as one function in my own script and don't get distracted by all of its code. \
 I chose to not put the source code of this file here for readability purposes, because it's not related to the challenge.
 
