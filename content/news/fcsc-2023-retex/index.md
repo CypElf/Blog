@@ -18,7 +18,7 @@ My goal with this article is to demystify the process, and, I hope, inspire futu
 # TL;DR
 
 - Anybody [motivated](https://youtu.be/ChPNBYNw1rQ?si=yu6rwOZ6ogIRbJsX) can do it
-- Read previous editions write ups
+- Do previous editions challenges and read the write ups on [Hackropole](https://hackropole.fr)
 - Learn new useful tools to extend your kit
 - Do massive R&D about a lot of subjects
 - Learn the mindset of searching and learning very quickly
@@ -54,6 +54,8 @@ This is probably the most obvious thing to do if you want to train for a specifi
 I especially spent time looking at the hardware write ups for the most difficult challenges that I didn't solved, because I wanted to be able to solve that kind of thing if I see it again in the future or if some key concepts are useful to understand and can be reused for other challenges. \
 That's how I had to learn a lot about U2F and LoRa transmissions, until I was 100% sure if these challenges were seen again, I would solve them easily. \
 Again, the write ups themselves are often not enough: don't hesitate to watch a lot of videos on the topic, to read documentations, wikipedia pages... And come back to the write up you were reading with the new knowledge you acquired, making you understand much better the explainations!
+
+**2024 edit** : a new website called [Hackropole](https://hackropole.fr) was released and contain all the challenges from previous editions of the CTF, with everything to set them up locally. Participants can also submit their write ups and they are added to the website after review. This is an amazing place to try out past challenges and learn things, so I highly encourage you to use it extensively!
 
 ![](lora.png)
 
