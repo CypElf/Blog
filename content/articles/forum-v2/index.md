@@ -2,12 +2,12 @@
 title: Forum v2
 description: Jinja filter bypass to XSS
 summary: Jinja filter bypass to XSS
-date: 2024-08-11
+date: 2025-05-12
 tags:
 - Web
 ctf:
 - Root-Me CTF 20k
-draft: true
+draft: false
 ---
 
 **Note**: this write up is for a challenge I created for the Root-Me 20k CTF.
