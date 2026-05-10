@@ -14,7 +14,7 @@ title = "Elf's blog"
   dateFormat = "2 January 2006"
   rtl = false
 
-[author]
+[params.author]
   name = "Elf"
   image = "logo.gif"
   # headline = ""

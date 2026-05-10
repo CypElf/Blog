@@ -66,6 +66,8 @@
   {{ $jsRTL := resources.Get "js/rtl.js" }}
   {{ $assets.Add "js" (slice $jsRTL) }}
   {{ end }}
+  {{ $jsEmail := resources.Get "js/email.js" }}
+  {{ $assets.Add "js" (slice $jsEmail) }}
   {{ if $assets.Get "js" }}
   {{ $bundleJS := $assets.Get "js" | resources.Concat "js/main.bundle.js" | resources.Minify | resources.Fingerprint
   "sha512" }}
