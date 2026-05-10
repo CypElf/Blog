@@ -71,7 +71,7 @@ with open("flag.txt") as flag:
 
 This challenge is white box, we have to reach the part that will read and print the flag. It is supposed to be protected by a kind of MAC based on a random 32 bytes secret.
 
-If we search a bit online about MAC in general, we see that HMAC is the most used today and it is more complicated than just `hash(secret || message)` as is the case in the program. If we search more information about that, we can see that using this naive formula is [vulnerable]((https://en.wikipedia.org/wiki/HMAC#Design_principles)) to the [length-extension attack](https://en.wikipedia.org/wiki/Length_extension_attack) for certain hash functions, including SHA2, which is the one used here.
+If we search a bit online about MAC in general, we see that HMAC is the most used today and it is more complicated than just `hash(secret || message)` as is the case in the program. If we search more information about that, we can see that using this naive formula is [vulnerable](https://en.wikipedia.org/wiki/HMAC#Design_principles) to the [length-extension attack](https://en.wikipedia.org/wiki/Length_extension_attack) for certain hash functions, including SHA2, which is the one used here.
 
 Basically, the concept is that knowing an existing value and its MAC, we can initialize the internal state of the hash function with the existing hash, and then continue the hash computation with the data we want. \
 It means that knowing `hash(secret || data)`, we can compute `hash(secret || data || attacker_controlled_data)`.

@@ -1,6 +1,6 @@
 <head>
   <meta charset="utf-8" />
-  {{ with .Site.Language.Params.htmlCode | default .Site.LanguageCode }}
+  {{ with .Site.Language.Params.htmlCode | default .Site.Language.Locale }}
   <meta http-equiv="content-language" content="{{ . }}" />
   {{ end }}
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -102,9 +102,9 @@
   {{/* Schema */}}
   {{ partial "schema.html" . }}
   {{/* Me */}}
-  {{ with .Site.Author.name }}
+  {{ with .Site.Params.author.name }}
   <meta name="author" content="{{ . }}" />{{ end }}
-  {{ with .Site.Author.links }}
+  {{ with .Site.Params.author.links }}
   {{ range $links := . }}
   {{ range $name, $url := $links }}
   <link href="{{ $url }}" rel="me" />{{ end }}
@@ -145,5 +145,4 @@
   {{ end }}
   {{ end }}
 
-  {{ partial "matomo-tracking" . }}
 </head>
