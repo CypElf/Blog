@@ -1,7 +1,7 @@
 ---
 title: I'll be on main stage at LeHack 2026!
-description: This year at Le Hack, I will present a talk about SigHax, a critical exploit and vulnerability found in the bootrom of the Nintendo 3DS, allowing arbitrary firmware signature and cold boot code execution on both ARM9 and ARM11 CPUs.
-summary: This year at Le Hack, I will present a talk about SigHax, a critical exploit and vulnerability found in the bootrom of the Nintendo 3DS, allowing arbitrary firmware signature and cold boot code execution on both ARM9 and ARM11 CPUs.
+description: This year at Le Hack, I will present a talk about SigHax on the main stage!
+summary: This year at Le Hack, I will present a talk about SigHax on the main stage!
 date: 2026-06-24
 draft: false
 ---
